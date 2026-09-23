@@ -1,309 +1,717 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Studio J&amp;L | Salão de Beleza em Porto Alegre</title>
-<meta name="description" content="Studio J&amp;L — salão de beleza em Porto Alegre. Corte, mechas, tratamentos capilares, unhas e make. Excelência em cada detalhe. Agende pelo WhatsApp.">
-<meta name="theme-color" content="#FAF8F4">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Studio J&amp;L | Salão de Beleza em Porto Alegre</title>
+    <meta
+      name="description"
+      content="Studio J&amp;L — salão de beleza em Porto Alegre. Corte, mechas, tratamentos capilares, unhas e make. Excelência em cada detalhe. Agende pelo WhatsApp."
+    />
+    <meta name="theme-color" content="#FAF8F4" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Studio J&amp;L | Salão de Beleza em Porto Alegre">
-<meta property="og:description" content="Corte, mechas, tratamentos capilares, unhas e make. Excelência em cada detalhe.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/loira-lg.webp">
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Studio J&amp;L | Salão de Beleza em Porto Alegre"
+    />
+    <meta
+      property="og:description"
+      content="Corte, mechas, tratamentos capilares, unhas e make. Excelência em cada detalhe."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/loira-lg.webp" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,420&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,420&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
 
-<!-- LCP: pré-carrega a foto da hero -->
-<link rel="preload" as="image" href="images/loira-lg.webp" imagesrcset="images/loira-sm.webp 700w, images/loira-lg.webp 1086w" imagesizes="(max-width: 900px) 100vw, 48vw" fetchpriority="high">
+    <!-- LCP: pré-carrega a foto da hero -->
+    <link
+      rel="preload"
+      as="image"
+      href="images/loira-lg.webp"
+      imagesrcset="images/loira-sm.webp 700w, images/loira-lg.webp 1086w"
+      imagesizes="(max-width: 900px) 100vw, 48vw"
+      fetchpriority="high"
+    />
 
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body id="top">
-<a href="#main" class="skip-link">Pular para o conteúdo</a>
-<div id="progress" role="progressbar" aria-hidden="true"></div>
-<div id="preloader" aria-hidden="true"><span>J&amp;L</span></div>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body id="top">
+    <a href="#main" class="skip-link">Pular para o conteúdo</a>
+    <div id="progress" role="progressbar" aria-hidden="true"></div>
+    <div id="preloader" aria-hidden="true"><span>J&amp;L</span></div>
 
-<header id="site-header">
-  <div class="wrap">
-    <a href="#top" class="logo">Studio <em>J&amp;L</em></a>
-    <input type="checkbox" id="menu-toggle" aria-hidden="true">
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="#servicos" class="nav-link">Serviços</a></li>
-        <li><a href="#resultados" class="nav-link">Resultados</a></li>
-        <li><a href="#sobre" class="nav-link">Estúdio</a></li>
-        <li><a href="#faq" class="nav-link">Perguntas</a></li>
-        <li><a href="https://contate.me/5551994129746" target="_blank" rel="noopener" class="btn btn-gold nav-cta desktop-only">Agendar</a></li>
-        <li><a href="https://contate.me/5551994129746" target="_blank" rel="noopener" class="btn btn-gold nav-cta">Agendar no WhatsApp</a></li>
-      </ul>
-    </nav>
-    <label for="menu-toggle" class="burger" id="burger-btn" aria-label="Abrir menu" role="button" tabindex="0"><span></span><span></span><span></span></label>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- =========================== HERO =========================== -->
-  <section class="hero" id="hero">
-    <div class="hero-copy">
-      <p class="kicker">Studio da beleza · Porto Alegre, RS</p>
-      <h1 id="hero-title">
-        <span class="reveal-mask"><span class="line">Excelência em</span></span>
-        <span class="reveal-mask"><span class="line">cada detalhe.</span></span>
-      </h1>
-      <p class="hero-lede" data-reveal>Corte, mechas, tratamentos capilares, unhas e make — conduzidos com técnica, escuta e cuidado, em Porto Alegre.</p>
-      <div class="hero-ctas" data-reveal>
-        <a href="https://contate.me/5551994129746" target="_blank" rel="noopener" class="btn btn-gold">Agendar pelo WhatsApp</a>
-        <a href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" class="btn btn-line">@studiodabelezajl_</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="clip" id="hero-clip">
-        <img id="hero-img"
-             src="images/loira-lg.webp"
-             srcset="images/loira-sm.webp 700w, images/loira-lg.webp 1086w"
-             sizes="(max-width: 900px) 100vw, 48vw"
-             width="1086" height="1448"
-             alt="Cliente do Studio J&amp;L com mechas loiras e cachos definidos, foto real do salão"
-             fetchpriority="high">
-      </div>
-    </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Corte</span><span class="dim">—</span><span>Mechas</span><span class="dim">—</span><span>Tratamentos</span><span class="dim">—</span><span>Unhas</span><span class="dim">—</span><span>Make</span><span class="dim">—</span>
-      <span>Corte</span><span class="dim">—</span><span>Mechas</span><span class="dim">—</span><span>Tratamentos</span><span class="dim">—</span><span>Unhas</span><span class="dim">—</span><span>Make</span><span class="dim">—</span>
-    </div>
-  </div>
-
-  <!-- ========================= RESULTADOS ========================= -->
-  <section id="resultados">
-    <div class="wrap resultados-head">
-      <p class="kicker">Resultados</p>
-      <h2 class="reveal-mask"><span class="line">Trabalhos reais, feitos aqui.</span></h2>
-    </div>
-    <div id="res-pin">
-      <div class="res-track wrap" id="res-track">
-
-        <figure class="res-card" data-lightbox
-                data-full="images/mechas-lg.webp" data-alt="Mechas loiras em cabelo longo cacheado" data-caption="Mechas">
-          <img src="images/mechas-lg.webp" width="1122" height="1402" loading="lazy" alt="Mechas loiras em cabelo longo cacheado">
-          <figcaption>Mechas</figcaption>
-        </figure>
-
-        <figure class="res-card" data-lightbox
-                data-full="images/corte-lg.webp" data-alt="Corte em camadas em cabelo castanho com luzes" data-caption="Corte">
-          <img src="images/corte-lg.webp" width="1086" height="1448" loading="lazy" alt="Corte em camadas em cabelo castanho com luzes">
-          <figcaption>Corte</figcaption>
-        </figure>
-
-        <figure class="res-card" data-lightbox
-                data-full="images/tratamento-lg.webp" data-alt="Cachos definidos e com brilho após tratamento capilar" data-caption="Tratamento capilar">
-          <img src="images/tratamento-lg.webp" width="580" height="581" loading="lazy" alt="Cachos definidos e com brilho após tratamento capilar">
-          <figcaption>Tratamento capilar</figcaption>
-        </figure>
-
-        <figure class="res-card" data-lightbox
-                data-full="images/unhas-lg.webp" data-alt="Unhas com esmaltação vermelha" data-caption="Unhas">
-          <img src="images/unhas-lg.webp" width="1086" height="1448" loading="lazy" alt="Unhas com esmaltação vermelha">
-          <figcaption>Unhas</figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================== SERVIÇOS ========================== -->
-  <section id="servicos" class="servicos">
-    <div class="wrap">
-      <p class="kicker">Serviços</p>
-      <h2 class="reveal-mask mb-sm"><span class="line">O que fazemos por aqui.</span></h2>
-    </div>
-    <div class="wrap svc-list">
-
-      <div class="svc-row" tabindex="0">
-        <div class="svc-left">
-          <span class="svc-n">01</span>
-          <div><h3>Corte</h3><p>Cortes desenhados para o seu rosto, com acabamento de precisão.</p></div>
-        </div>
-        <div class="svc-thumb"><img src="images/corte-sm.webp" width="700" height="933" loading="lazy" alt=""></div>
-        <div class="svc-float"><img src="images/corte-lg.webp" width="1086" height="1448" loading="lazy" alt=""></div>
-      </div>
-
-      <div class="svc-row" tabindex="0">
-        <div class="svc-left">
-          <span class="svc-n">02</span>
-          <div><h3>Mechas</h3><p>Técnicas de coloração e mechas sob medida, com foco na saúde do fio.</p></div>
-        </div>
-        <div class="svc-thumb"><img src="images/mechas-sm.webp" width="700" height="875" loading="lazy" alt=""></div>
-        <div class="svc-float"><img src="images/mechas-lg.webp" width="1122" height="1402" loading="lazy" alt=""></div>
-      </div>
-
-      <div class="svc-row" tabindex="0">
-        <div class="svc-left">
-          <span class="svc-n">03</span>
-          <div><h3>Tratamentos capilares</h3><p>Protocolos de reconstrução, hidratação e nutrição para fios mais fortes.</p></div>
-        </div>
-        <div class="svc-thumb"><img src="images/tratamento-sm.webp" width="580" height="581" loading="lazy" alt=""></div>
-        <div class="svc-float"><img src="images/tratamento-lg.webp" width="580" height="581" loading="lazy" alt=""></div>
-      </div>
-
-      <div class="svc-row" tabindex="0">
-        <div class="svc-left">
-          <span class="svc-n">04</span>
-          <div><h3>Unhas</h3><p>Manicure e pedicure com cuidado completo e esmaltação de precisão.</p></div>
-        </div>
-        <div class="svc-thumb"><img src="images/unhas-sm.webp" width="700" height="933" loading="lazy" alt=""></div>
-        <div class="svc-float"><img src="images/unhas-lg.webp" width="1086" height="1448" loading="lazy" alt=""></div>
-      </div>
-
-      <div class="svc-row" tabindex="0">
-        <div class="svc-left">
-          <span class="svc-n">05</span>
-          <div><h3>Make</h3><p>Produção de make para o dia a dia ou para ocasiões especiais.</p></div>
-        </div>
-        <div class="svc-thumb ph" aria-hidden="true">
-          <svg class="ph-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
-        </div>
-        <div class="svc-float ph" aria-hidden="true">
-          <svg class="ph-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"/></svg>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================== MANIFESTO ========================== -->
-  <section class="manifesto" id="manifesto">
-    <div class="wrap">
-      <p class="line" data-reveal>Beleza não é pressa.</p>
-      <p class="line pale" data-reveal>É técnica.</p>
-      <p class="line pale" data-reveal>É escuta.</p>
-      <p class="line" data-reveal>É excelência em cada detalhe.</p>
-    </div>
-  </section>
-
-  <!-- ============================ SOBRE ============================ -->
-  <section id="sobre">
-    <div class="wrap about-grid">
-      <div>
-        <p class="kicker">O estúdio</p>
-        <h2 class="reveal-mask"><span class="line">Beleza como ofício, não como pressa.</span></h2>
-      </div>
-      <div class="about-text">
-        <p data-reveal>No Studio J&amp;L, cada atendimento é conduzido com a atenção de quem entende que beleza é resultado de técnica, escuta e tempo bem empregado.</p>
-        <p data-reveal>Em Porto Alegre, construímos um espaço onde corte, mechas, tratamentos, unhas e make são pensados sob medida para a sua rotina e para a imagem que você quer levar para o mundo.</p>
-        <div class="pillars">
-          <div class="pillar" data-reveal><h3>Técnica apurada</h3><p>Profissionais atentos a cada etapa do processo.</p></div>
-          <div class="pillar" data-reveal><h3>Atendimento próximo</h3><p>Cada visita começa com uma escuta real sobre o que você quer alcançar.</p></div>
-          <div class="pillar" data-reveal><h3>Ambiente acolhedor</h3><p>Um espaço pensado para o seu cuidado desde a chegada.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================== INSTAGRAM ========================== -->
-  <section class="insta" id="instagram">
-    <div class="wrap">
-      <div class="insta-head">
-        <div>
-          <p class="kicker">Instagram</p>
-          <h2 class="reveal-mask"><span class="line">Siga @studiodabelezajl_</span></h2>
-        </div>
-        <a href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" class="btn btn-line">Ver perfil completo</a>
-      </div>
-      <div class="insta-grid">
-        <a class="insta-item" href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" aria-label="Ver no Instagram">
-          <img src="images/detalhe-sm.webp" width="579" height="733" loading="lazy" alt="">
-          <span class="ov"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></span>
-        </a>
-        <a class="insta-item" href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" aria-label="Ver no Instagram">
-          <img src="images/mechas-sm.webp" width="700" height="875" loading="lazy" alt="">
-          <span class="ov"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></span>
-        </a>
-        <a class="insta-item" href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" aria-label="Ver no Instagram">
-          <img src="images/corte-sm.webp" width="700" height="875" loading="lazy" alt="">
-          <span class="ov"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></span>
-        </a>
-        <a class="insta-item" href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" aria-label="Ver no Instagram">
-          <img src="images/unhas-sm.webp" width="700" height="933" loading="lazy" alt="">
-          <span class="ov"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================= FAQ ============================= -->
-  <section id="faq" class="faq">
-    <div class="wrap faq-wrap">
-      <p class="kicker">Perguntas frequentes</p>
-      <h2 class="reveal-mask mb-lg"><span class="line">Antes de vir até nós.</span></h2>
-      <details>
-        <summary>Como faço para agendar um horário?</summary>
-        <p>O agendamento é feito diretamente pelo WhatsApp — clique em "Agendar" e nossa equipe confirma o melhor horário para você.</p>
-      </details>
-      <details>
-        <summary>Quais serviços o Studio J&amp;L oferece?</summary>
-        <p>Corte, mechas, tratamentos capilares, unhas e make.</p>
-      </details>
-      <details>
-        <summary>Horários, valores e formas de pagamento?</summary>
-        <p>Essas informações são confirmadas diretamente no WhatsApp no momento do agendamento.</p>
-      </details>
-      <details>
-        <summary>Onde fica o Studio J&amp;L?</summary>
-        <p>Estamos em Porto Alegre, RS. O endereço é enviado na confirmação do seu agendamento.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- =========================== CTA FINAL =========================== -->
-  <section class="cta-final" id="cta-final">
-    <div class="wrap">
-      <p class="kicker">Vamos começar</p>
-      <h2 class="reveal-mask"><span class="line">Sua próxima transformação começa com uma mensagem.</span></h2>
-      <p data-reveal>Agende seu horário no Studio J&amp;L — corte, mechas, tratamentos, unhas ou make.</p>
-      <div class="hero-ctas" data-reveal>
-        <a href="https://contate.me/5551994129746" target="_blank" rel="noopener" class="btn btn-gold">Agendar pelo WhatsApp</a>
-        <a href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener" class="btn btn-dark">@studiodabelezajl_</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
+    <header id="site-header">
+      <div class="wrap">
         <a href="#top" class="logo">Studio <em>J&amp;L</em></a>
-        <p class="tag">Studio da beleza · Porto Alegre, RS</p>
+        <input type="checkbox" id="menu-toggle" aria-hidden="true" />
+        <nav aria-label="Navegação principal">
+          <ul>
+            <li><a href="#servicos" class="nav-link">Serviços</a></li>
+            <li><a href="#resultados" class="nav-link">Resultados</a></li>
+            <li><a href="#sobre" class="nav-link">Estúdio</a></li>
+            <li><a href="#faq" class="nav-link">Perguntas</a></li>
+            <li>
+              <a
+                href="https://contate.me/5551994129746"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-gold nav-cta desktop-only"
+                >Agendar</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://contate.me/5551994129746"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-gold nav-cta"
+                >Agendar no WhatsApp</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <label
+          for="menu-toggle"
+          class="burger"
+          id="burger-btn"
+          aria-label="Abrir menu"
+          role="button"
+          tabindex="0"
+          ><span></span><span></span><span></span
+        ></label>
       </div>
-      <div class="foot-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#faq">Perguntas</a>
-        <a href="https://www.instagram.com/studiodabelezajl_/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://contate.me/5551994129746" target="_blank" rel="noopener">WhatsApp</a>
+    </header>
+
+    <main id="main">
+      <!-- =========================== HERO =========================== -->
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="kicker">Studio da beleza · Porto Alegre, RS</p>
+          <h1 id="hero-title">
+            <span class="reveal-mask"
+              ><span class="line">Excelência em</span></span
+            >
+            <span class="reveal-mask"
+              ><span class="line">cada detalhe.</span></span
+            >
+          </h1>
+          <p class="hero-lede" data-reveal>
+            Corte, mechas, tratamentos capilares, unhas e make — conduzidos com
+            técnica, escuta e cuidado, em Porto Alegre.
+          </p>
+          <div class="hero-ctas" data-reveal>
+            <a
+              href="https://contate.me/5551994129746"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-gold"
+              >Agendar pelo WhatsApp</a
+            >
+            <a
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-line"
+              >@studiodabelezajl_</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="clip" id="hero-clip">
+            <img
+              id="hero-img"
+              src="images/mechas-lg.webp"
+              srcset="images/mechas-lg.webp 700w, images/mechas-lg.webp 1086w"
+              sizes="(max-width: 900px) 100vw, 48vw"
+              width="1086"
+              height="1448"
+              alt="Cliente do Studio J&amp;L com mechas loiras e cachos definidos, foto real do salão"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Corte</span><span class="dim">—</span><span>Mechas</span
+          ><span class="dim">—</span><span>Tratamentos</span
+          ><span class="dim">—</span><span>Unhas</span><span class="dim">—</span
+          ><span>Make</span><span class="dim">—</span> <span>Corte</span
+          ><span class="dim">—</span><span>Mechas</span
+          ><span class="dim">—</span><span>Tratamentos</span
+          ><span class="dim">—</span><span>Unhas</span><span class="dim">—</span
+          ><span>Make</span><span class="dim">—</span>
+        </div>
       </div>
+
+      <!-- ========================= RESULTADOS ========================= -->
+      <section id="resultados">
+        <div class="wrap resultados-head">
+          <p class="kicker">Resultados</p>
+          <h2 class="reveal-mask">
+            <span class="line">Trabalhos reais, feitos aqui.</span>
+          </h2>
+        </div>
+        <div id="res-pin">
+          <div class="res-track wrap" id="res-track">
+            <figure
+              class="res-card"
+              data-lightbox
+              data-full="images/loira-lg.webp"
+              data-alt="Mechas loiras em cabelo longo cacheado"
+              data-caption="Mechas"
+            >
+              <img
+                src="images/loira-lg.webp"
+                width="1122"
+                height="1402"
+                loading="lazy"
+                alt="Mechas loiras em cabelo longo cacheado"
+              />
+              <figcaption>Mechas</figcaption>
+            </figure>
+
+            <figure
+              class="res-card"
+              data-lightbox
+              data-full="images/corte-lg.webp"
+              data-alt="Corte em camadas em cabelo castanho com luzes"
+              data-caption="Corte"
+            >
+              <img
+                src="images/corte-lg.webp"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                alt="Corte em camadas em cabelo castanho com luzes"
+              />
+              <figcaption>Corte</figcaption>
+            </figure>
+
+            <figure
+              class="res-card"
+              data-lightbox
+              data-full="images/tratamento-lg.webp"
+              data-alt="Cachos definidos e com brilho após tratamento capilar"
+              data-caption="Tratamento capilar"
+            >
+              <img
+                src="images/tratamento-lg.webp"
+                width="580"
+                height="581"
+                loading="lazy"
+                alt="Cachos definidos e com brilho após tratamento capilar"
+              />
+              <figcaption>Tratamento capilar</figcaption>
+            </figure>
+
+            <figure
+              class="res-card"
+              data-lightbox
+              data-full="images/unhas-lg.webp"
+              data-alt="Unhas com esmaltação vermelha"
+              data-caption="Unhas"
+            >
+              <img
+                src="images/unhas-lg.webp"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                alt="Unhas com esmaltação vermelha"
+              />
+              <figcaption>Unhas</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== SERVIÇOS ========================== -->
+      <section id="servicos" class="servicos">
+        <div class="wrap">
+          <p class="kicker">Serviços</p>
+          <h2 class="reveal-mask mb-sm">
+            <span class="line">O que fazemos por aqui.</span>
+          </h2>
+        </div>
+        <div class="wrap svc-list">
+          <div class="svc-row" tabindex="0">
+            <div class="svc-left">
+              <span class="svc-n">01</span>
+              <div>
+                <h3>Corte</h3>
+                <p>
+                  Cortes desenhados para o seu rosto, com acabamento de
+                  precisão.
+                </p>
+              </div>
+            </div>
+            <div class="svc-thumb">
+              <img
+                src="images/corte-sm.webp"
+                width="700"
+                height="933"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="svc-float">
+              <img
+                src="images/corte-lg.webp"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="svc-row" tabindex="0">
+            <div class="svc-left">
+              <span class="svc-n">02</span>
+              <div>
+                <h3>Mechas</h3>
+                <p>
+                  Técnicas de coloração e mechas sob medida, com foco na saúde
+                  do fio.
+                </p>
+              </div>
+            </div>
+            <div class="svc-thumb">
+              <img
+                src="images/mechas-sm.webp"
+                width="700"
+                height="875"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="svc-float">
+              <img
+                src="images/mechas-lg.webp"
+                width="1122"
+                height="1402"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="svc-row" tabindex="0">
+            <div class="svc-left">
+              <span class="svc-n">03</span>
+              <div>
+                <h3>Tratamentos capilares</h3>
+                <p>
+                  Protocolos de reconstrução, hidratação e nutrição para fios
+                  mais fortes.
+                </p>
+              </div>
+            </div>
+            <div class="svc-thumb">
+              <img
+                src="images/tratamento-sm.webp"
+                width="580"
+                height="581"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="svc-float">
+              <img
+                src="images/tratamento-lg.webp"
+                width="580"
+                height="581"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="svc-row" tabindex="0">
+            <div class="svc-left">
+              <span class="svc-n">04</span>
+              <div>
+                <h3>Unhas</h3>
+                <p>
+                  Manicure e pedicure com cuidado completo e esmaltação de
+                  precisão.
+                </p>
+              </div>
+            </div>
+            <div class="svc-thumb">
+              <img
+                src="images/unhas-sm.webp"
+                width="700"
+                height="933"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="svc-float">
+              <img
+                src="images/unhas-lg.webp"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="svc-row" tabindex="0">
+            <div class="svc-left">
+              <span class="svc-n">05</span>
+              <div>
+                <h3>Make</h3>
+                <p>
+                  Produção de make para o dia a dia ou para ocasiões especiais.
+                </p>
+              </div>
+            </div>
+            <div class="svc-thumb ph" aria-hidden="true">
+              <svg
+                class="ph-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+              >
+                <path
+                  d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"
+                />
+              </svg>
+            </div>
+            <div class="svc-float ph" aria-hidden="true">
+              <svg
+                class="ph-icon"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+              >
+                <path
+                  d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== MANIFESTO ========================== -->
+      <section class="manifesto" id="manifesto">
+        <div class="wrap">
+          <p class="line" data-reveal>Beleza não é pressa.</p>
+          <p class="line pale" data-reveal>É técnica.</p>
+          <p class="line pale" data-reveal>É escuta.</p>
+          <p class="line" data-reveal>É excelência em cada detalhe.</p>
+        </div>
+      </section>
+
+      <!-- ============================ SOBRE ============================ -->
+      <section id="sobre">
+        <div class="wrap about-grid">
+          <div>
+            <p class="kicker">O estúdio</p>
+            <h2 class="reveal-mask">
+              <span class="line">Beleza como ofício, não como pressa.</span>
+            </h2>
+          </div>
+          <div class="about-text">
+            <p data-reveal>
+              No Studio J&amp;L, cada atendimento é conduzido com a atenção de
+              quem entende que beleza é resultado de técnica, escuta e tempo bem
+              empregado.
+            </p>
+            <p data-reveal>
+              Em Porto Alegre, construímos um espaço onde corte, mechas,
+              tratamentos, unhas e make são pensados sob medida para a sua
+              rotina e para a imagem que você quer levar para o mundo.
+            </p>
+            <div class="pillars">
+              <div class="pillar" data-reveal>
+                <h3>Técnica apurada</h3>
+                <p>Profissionais atentos a cada etapa do processo.</p>
+              </div>
+              <div class="pillar" data-reveal>
+                <h3>Atendimento próximo</h3>
+                <p>
+                  Cada visita começa com uma escuta real sobre o que você quer
+                  alcançar.
+                </p>
+              </div>
+              <div class="pillar" data-reveal>
+                <h3>Ambiente acolhedor</h3>
+                <p>Um espaço pensado para o seu cuidado desde a chegada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== INSTAGRAM ========================== -->
+      <section class="insta" id="instagram">
+        <div class="wrap">
+          <div class="insta-head">
+            <div>
+              <p class="kicker">Instagram</p>
+              <h2 class="reveal-mask">
+                <span class="line">Siga @studiodabelezajl_</span>
+              </h2>
+            </div>
+            <a
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-line"
+              >Ver perfil completo</a
+            >
+          </div>
+          <div class="insta-grid">
+            <a
+              class="insta-item"
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Ver no Instagram"
+            >
+              <img
+                src="images/detalhe-sm.webp"
+                width="579"
+                height="733"
+                loading="lazy"
+                alt=""
+              />
+              <span class="ov"
+                ><svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F7F4EE"
+                  stroke-width="1.4"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" /></svg
+              ></span>
+            </a>
+            <a
+              class="insta-item"
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Ver no Instagram"
+            >
+              <img
+                src="images/mechas-sm.webp"
+                width="700"
+                height="875"
+                loading="lazy"
+                alt=""
+              />
+              <span class="ov"
+                ><svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F7F4EE"
+                  stroke-width="1.4"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" /></svg
+              ></span>
+            </a>
+            <a
+              class="insta-item"
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Ver no Instagram"
+            >
+              <img
+                src="images/corte-sm.webp"
+                width="700"
+                height="875"
+                loading="lazy"
+                alt=""
+              />
+              <span class="ov"
+                ><svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F7F4EE"
+                  stroke-width="1.4"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" /></svg
+              ></span>
+            </a>
+            <a
+              class="insta-item"
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Ver no Instagram"
+            >
+              <img
+                src="images/unhas-sm.webp"
+                width="700"
+                height="933"
+                loading="lazy"
+                alt=""
+              />
+              <span class="ov"
+                ><svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F7F4EE"
+                  stroke-width="1.4"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.3" cy="6.7" r="1" /></svg
+              ></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= FAQ ============================= -->
+      <section id="faq" class="faq">
+        <div class="wrap faq-wrap">
+          <p class="kicker">Perguntas frequentes</p>
+          <h2 class="reveal-mask mb-lg">
+            <span class="line">Antes de vir até nós.</span>
+          </h2>
+          <details>
+            <summary>Como faço para agendar um horário?</summary>
+            <p>
+              O agendamento é feito diretamente pelo WhatsApp — clique em
+              "Agendar" e nossa equipe confirma o melhor horário para você.
+            </p>
+          </details>
+          <details>
+            <summary>Quais serviços o Studio J&amp;L oferece?</summary>
+            <p>Corte, mechas, tratamentos capilares, unhas e make.</p>
+          </details>
+          <details>
+            <summary>Horários, valores e formas de pagamento?</summary>
+            <p>
+              Essas informações são confirmadas diretamente no WhatsApp no
+              momento do agendamento.
+            </p>
+          </details>
+          <details>
+            <summary>Onde fica o Studio J&amp;L?</summary>
+            <p>
+              Estamos em Porto Alegre, RS. O endereço é enviado na confirmação
+              do seu agendamento.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- =========================== CTA FINAL =========================== -->
+      <section class="cta-final" id="cta-final">
+        <div class="wrap">
+          <p class="kicker">Vamos começar</p>
+          <h2 class="reveal-mask">
+            <span class="line"
+              >Sua próxima transformação começa com uma mensagem.</span
+            >
+          </h2>
+          <p data-reveal>
+            Agende seu horário no Studio J&amp;L — corte, mechas, tratamentos,
+            unhas ou make.
+          </p>
+          <div class="hero-ctas" data-reveal>
+            <a
+              href="https://contate.me/5551994129746"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-gold"
+              >Agendar pelo WhatsApp</a
+            >
+            <a
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-dark"
+              >@studiodabelezajl_</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <a href="#top" class="logo">Studio <em>J&amp;L</em></a>
+            <p class="tag">Studio da beleza · Porto Alegre, RS</p>
+          </div>
+          <div class="foot-links">
+            <a href="#servicos">Serviços</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#faq">Perguntas</a>
+            <a
+              href="https://www.instagram.com/studiodabelezajl_/"
+              target="_blank"
+              rel="noopener"
+              >Instagram</a
+            >
+            <a
+              href="https://contate.me/5551994129746"
+              target="_blank"
+              rel="noopener"
+              >WhatsApp</a
+            >
+          </div>
+        </div>
+        <p class="copyright">
+          © <span id="year"></span> Studio J&amp;L — Excelência em cada detalhe.
+        </p>
+      </div>
+    </footer>
+
+    <div
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Imagem ampliada"
+    >
+      <button class="lb-close" id="lb-close" aria-label="Fechar imagem">
+        Fechar ✕
+      </button>
+      <img id="lb-img" src="" alt="" />
+      <figcaption id="lb-caption"></figcaption>
     </div>
-    <p class="copyright">© <span id="year"></span> Studio J&amp;L — Excelência em cada detalhe.</p>
-  </div>
-</footer>
 
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
-  <button class="lb-close" id="lb-close" aria-label="Fechar imagem">Fechar ✕</button>
-  <img id="lb-img" src="" alt="">
-  <figcaption id="lb-caption"></figcaption>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
