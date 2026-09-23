@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Studio J&L — Salão de Beleza · Porto Alegre, RS
+   style.css — folha de estilos principal
+   Sumário:
+     1. Reset & tokens
+     2. Tipografia & utilitários
+     3. Botões
+     4. Preloader & barra de progresso
+     5. Header & navegação
+     6. Hero
+     7. Marquee
+     8. Resultados (galeria pinada)
+     9. Serviços
+    10. Manifesto
+    11. Sobre / Estúdio
+    12. Instagram
+    13. FAQ
+    14. CTA final & footer
+    15. Lightbox
+    16. Acessibilidade / prefers-reduced-motion
+   ========================================================================== */
+
+/* ---------- 1. Reset & tokens ------------------------------------------- */
+:root {
+  --bg: #FAF8F4;
+  --ink: #141312;
+  --text: #232120;
+  --text-light: #F7F4EE;
+  --gold: #B59A61;
+  --gold-dark: #A3895A;
+  --beige: #E4DACD;
+  --taupe: #8A7A6B;
+  --white: #FFFFFF;
+  --border: rgba(35, 33, 32, .14);
+  --border-dark: rgba(247, 244, 238, .16);
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  --ease-out: cubic-bezier(.16, .8, .3, 1);
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html[data-lock] body { overflow: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+ul { list-style: none; }
+
+/* ---------- 2. Tipografia & utilitários ---------------------------------- */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 640px) { .wrap { padding: 0 22px; } }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 460; letter-spacing: -.01em; }
+
+.kicker {
+  font-family: var(--sans);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--taupe);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--text-light);
+  padding: 12px 20px; z-index: 999;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+section { padding: 130px 0; }
+@media (max-width: 900px) { section { padding: 84px 0; } }
+
+/* reveal / mask animation hooks (driven by script.js) */
+.reveal-mask { overflow: hidden; display: block; }
+[data-reveal] { opacity: 0; transform: translateY(22px); }
+[data-reveal].in {
+  opacity: 1; transform: none;
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+
+/* ---------- 3. Botões ----------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px; font-size: .88rem; font-weight: 500;
+  border: 1px solid var(--text); border-radius: 2px;
+  transition: transform .35s var(--ease-out), background .3s, color .3s, border-color .3s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn:active { transform: translateY(-1px) scale(.98); }
+.btn-gold { background: var(--gold); color: var(--white); border-color: var(--gold); }
+.btn-gold:hover { background: var(--gold-dark); }
+.btn-line { border-color: var(--border); color: var(--text); }
+.btn-line:hover { border-color: var(--text); }
+.btn-dark { border-color: var(--border-dark); color: var(--text-light); }
+.btn-dark:hover { background: var(--text-light); color: var(--ink); }
+
+/* ---------- 4. Preloader & barra de progresso ----------------------------- */
+#progress {
+  position: fixed; top: 0; left: 0; height: 2px; background: var(--gold);
+  width: 0%; z-index: 200; transition: width .1s linear;
+}
+
+#preloader {
+  position: fixed; inset: 0; background: var(--ink); z-index: 500;
+  display: flex; align-items: center; justify-content: center;
+}
+#preloader span {
+  font-family: var(--serif); font-style: italic; color: var(--text-light);
+  font-size: 2.4rem; opacity: 0;
+}
+
+/* ---------- 5. Header & navegação ------------------------------------------ */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 150; padding: 26px 0;
+  transition: transform .5s var(--ease-out), background .4s, padding .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+header.scrolled { background: rgba(250, 248, 244, .88); backdrop-filter: blur(10px); padding: 16px 0; border-color: var(--border); }
+header.hide { transform: translateY(-100%); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; }
+
+.logo { font-family: var(--serif); font-size: 1.35rem; }
+.logo em { font-style: italic; color: var(--gold); }
+
+nav ul { display: flex; gap: 34px; align-items: center; }
+.nav-link { font-size: .86rem; opacity: .82; transition: opacity .25s; }
+.nav-link:hover { opacity: 1; }
+.nav-cta { font-size: .82rem; padding: 11px 22px; }
+
+#menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; z-index: 60; width: 26px; }
+.burger span { height: 1px; background: var(--text); transition: transform .3s, opacity .3s; }
+@media (min-width: 861px) { .burger { display: none; } }
+
+@media (max-width: 860px) {
+  .nav-link, .nav-cta.desktop-only { display: none; }
+  nav ul {
+    position: fixed; inset: 0; background: var(--ink);
+    flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 0 44px; gap: 0; visibility: hidden; opacity: 0; transition: opacity .3s;
+  }
+  #menu-toggle:checked ~ nav ul { visibility: visible; opacity: 1; }
+  nav ul li { overflow: hidden; }
+  nav ul li a { font-family: var(--serif); font-size: 2rem; color: var(--text-light); display: block; padding: 14px 0; transform: translateY(110%); }
+  nav ul li a.nav-cta { color: var(--ink); margin-top: 10px; }
+}
+
+/* ---------- 6. Hero ---------------------------------------------------------
+   Grid editorial de 2 colunas: texto à esquerda, foto à direita com reveal
+   por clip-path. Estrutura pensada para performance (LCP na foto) e para
+   reduzir layout shift (aspect-ratio fixo no visual). */
+.hero {
+  padding: 150px 0 0;
+  display: grid;
+  grid-template-columns: 1fr .92fr;
+  align-items: stretch;
+  min-height: 94vh;
+}
+
+.hero-copy {
+  display: flex; flex-direction: column; justify-content: center;
+  /* alinha o texto com a borda esquerda do .wrap do resto do site,
+     mesmo a hero sendo um grid de largura total (sem .wrap) */
+  padding: 10px 60px 80px max(40px, calc((100vw - 1240px) / 2 + 40px));
+}
+.hero-copy h1 { font-size: clamp(2.5rem, 4.4vw, 4.1rem); line-height: 1.08; }
+.hero-copy h1 .reveal-mask { padding-bottom: .08em; }
+.hero-copy .hero-lede { max-width: 40ch; margin: 24px 0 36px; color: var(--taupe); font-size: 1.04rem; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-visual { position: relative; overflow: hidden; background: var(--ink); }
+.hero-visual .clip { position: absolute; inset: 0; clip-path: inset(100% 0 0 0); }
+.hero-visual img { transform: scale(1.12); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 120px; }
+  .hero-copy { padding: 14px 22px 46px; }
+  .hero-visual { min-height: 56vh; }
+}
+
+/* ---------- 7. Marquee ----------------------------------------------------- */
+.marquee { padding: 34px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+.marquee-track { display: flex; width: max-content; animation: mq 26s linear infinite; }
+.marquee-track span { font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.6rem); padding: 0 34px; white-space: nowrap; color: var(--text); }
+.marquee-track span.dim { color: var(--gold); }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- 8. Resultados (galeria pinada) --------------------------------- */
+.resultados-head { margin-bottom: 56px; }
+#res-pin { overflow: hidden; }
+.res-track { display: flex; gap: 24px; will-change: transform; }
+.res-card { flex: 0 0 auto; width: min(72vw, 420px); aspect-ratio: 3 / 4; position: relative; overflow: hidden; cursor: pointer; }
+.res-card img { transition: transform .7s var(--ease-out); }
+.res-card:hover img { transform: scale(1.06); }
+.res-card figcaption {
+  position: absolute; left: 0; bottom: 0; right: 0; padding: 18px 20px;
+  background: linear-gradient(0deg, rgba(0,0,0,.55), transparent 70%);
+  color: var(--text-light); font-family: var(--serif); font-style: italic;
+}
+@media (max-width: 900px) {
+  #res-pin { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .res-track { padding: 0 22px; }
+  .res-card { scroll-snap-align: start; width: 78vw; }
+}
+
+/* ---------- 9. Serviços ----------------------------------------------------- */
+.servicos { background: var(--white); }
+.svc-list { margin-top: 30px; }
+.mb-sm { margin-bottom: 10px; }
+.mb-lg { margin-bottom: 44px; }
+.svc-row { border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 38px 0; position: relative; gap: 30px; }
+.servicos .wrap > .svc-row:last-child { border-bottom: 1px solid var(--border); }
+.svc-row .svc-left { display: flex; align-items: baseline; gap: 22px; }
+.svc-row .svc-n { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1rem; min-width: 26px; }
+.svc-row h3 { font-size: clamp(1.6rem, 3.6vw, 2.6rem); font-weight: 440; transition: transform .5s var(--ease-out), color .4s; }
+.svc-row p { color: var(--taupe); font-size: .92rem; margin-top: 6px; max-width: 44ch; }
+.svc-thumb { width: 110px; height: 78px; overflow: hidden; flex: 0 0 auto; }
+.svc-thumb.ph { background: linear-gradient(155deg, var(--beige), var(--gold)); }
+.svc-row .svc-float {
+  position: absolute; top: 50%; right: 170px; width: 220px; height: 290px;
+  transform: translateY(-50%) scale(.9); opacity: 0; pointer-events: none; overflow: hidden;
+  transition: opacity .5s ease, transform .6s var(--ease-out); z-index: 5;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.3);
+}
+.svc-float.ph { background: linear-gradient(155deg, var(--beige), var(--gold)); }
+.svc-thumb.ph, .svc-float.ph { display: flex; align-items: center; justify-content: center; }
+.ph-icon { color: var(--white); opacity: .85; }
+@media (min-width: 861px) {
+  .svc-thumb { display: none; }
+  .svc-row:hover .svc-float, .svc-row:focus-within .svc-float { opacity: 1; transform: translateY(-50%) scale(1); }
+  .svc-row:hover h3, .svc-row:focus-within h3 { transform: translateX(14px); color: var(--gold); }
+}
+@media (max-width: 860px) { .svc-row .svc-float { display: none; } .svc-row { flex-wrap: wrap; } }
+
+/* ---------- 10. Manifesto ---------------------------------------------------- */
+.manifesto { background: var(--ink); color: var(--text-light); text-align: center; }
+.manifesto .line { font-family: var(--serif); font-style: italic; font-size: clamp(1.7rem, 5vw, 3.4rem); line-height: 1.3; }
+.manifesto .line.pale { color: var(--taupe); }
+
+/* ---------- 11. Sobre / Estúdio ---------------------------------------------- */
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; }
+.about-grid h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); max-width: 13ch; }
+.about-text p { color: var(--taupe); font-size: 1.02rem; margin-bottom: 18px; }
+.pillars { margin-top: 50px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+.pillar { border-top: 1px solid var(--border); padding-top: 18px; }
+.pillar h3 { font-size: 1rem; font-weight: 560; margin-bottom: 6px; }
+.pillar p { color: var(--taupe); font-size: .9rem; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } .pillars { grid-template-columns: 1fr; gap: 22px; } }
+
+/* ---------- 12. Instagram ----------------------------------------------------- */
+.insta { background: var(--beige); }
+.insta-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
+.insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.insta-item { aspect-ratio: 1 / 1; overflow: hidden; position: relative; cursor: pointer; }
+.insta-item img { transition: transform .6s var(--ease-out); }
+.insta-item:hover img { transform: scale(1.08); }
+.insta-item .ov { position: absolute; inset: 0; background: rgba(20,19,18,0); display: flex; align-items: center; justify-content: center; transition: background .35s; }
+.insta-item:hover .ov { background: rgba(20,19,18,.28); }
+.insta-item .ov svg { opacity: 0; transform: scale(.8); transition: opacity .3s, transform .3s; }
+.insta-item:hover .ov svg { opacity: 1; transform: scale(1); }
+@media (max-width: 900px) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- 13. FAQ ------------------------------------------------------------ */
+.faq-wrap { max-width: 760px; }
+details { border-bottom: 1px solid var(--border); padding: 24px 0; }
+summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; align-items: center; font-family: var(--serif); font-size: 1.1rem; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; font-size: 1.5rem; color: var(--gold); font-weight: 300; transition: transform .3s; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { color: var(--taupe); margin-top: 14px; max-width: 56ch; font-size: .95rem; }
+
+/* ---------- 14. CTA final & footer ---------------------------------------------- */
+.cta-final { background: var(--ink); color: var(--text-light); text-align: center; position: relative; }
+.cta-final h2 { color: var(--text-light); font-size: clamp(2rem, 5vw, 3.6rem); max-width: 16ch; margin: 0 auto 26px; }
+.cta-final p { color: var(--beige); max-width: 44ch; margin: 0 auto 38px; }
+.cta-final .hero-ctas { justify-content: center; }
+.cta-final .kicker { color: var(--gold); }
+
+footer { padding: 56px 0 36px; border-top: 1px solid var(--border); }
+.foot-grid { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 28px; }
+footer .tag { color: var(--taupe); font-size: .88rem; margin-top: 8px; }
+.foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
+.foot-links a { font-size: .86rem; color: var(--taupe); }
+.foot-links a:hover { color: var(--text); }
+.copyright { margin-top: 36px; font-size: .76rem; color: var(--taupe); border-top: 1px solid var(--border); padding-top: 22px; }
+
+/* ---------- 15. Lightbox --------------------------------------------------------- */
+#lightbox {
+  position: fixed; inset: 0; background: rgba(15,14,13,.92); z-index: 400;
+  display: flex; align-items: center; justify-content: center; visibility: hidden; opacity: 0;
+}
+#lightbox img { max-width: min(90vw, 900px); max-height: 82vh; width: auto; object-fit: contain; }
+#lightbox .lb-close { position: absolute; top: 28px; right: 32px; color: var(--text-light); font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+#lightbox figcaption { position: absolute; bottom: 34px; color: var(--beige); font-family: var(--serif); font-style: italic; }
+
+/* ---------- 16. Acessibilidade / prefers-reduced-motion --------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .hero-visual .clip { clip-path: none !important; }
+  .marquee-track { animation: none; }
+}
