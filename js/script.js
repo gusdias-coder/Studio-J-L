@@ -282,4 +282,81 @@
     init();
   }
   window.addEventListener('load', initOnLoad);
+
+  /* ---------- 11. Café-inspired motion system -----------------------------
+     Scroll reveals re-enter when revisiting a section; subtle image parallax,
+     staggered cards and pointer-only magnetic buttons. */
+  function initCafeMotion() {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll(
+      '.svc-row, .res-card, .pillar, .faq-wrap details, .about-grid, .insta-item, .manifesto .line'
+    );
+    var progress = document.createElement('div');
+    progress.id = 'page-progress-cafe';
+    progress.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(progress);
+
+    if (reduceMotion) {
+      targets.forEach(function (el) { el.classList.add('cafe-motion-target', 'cafe-visible'); });
+      return;
+    }
+
+    targets.forEach(function (el, index) {
+      el.classList.add('cafe-motion-target');
+      el.style.setProperty('--motion-delay', (index % 4) * 70 + 'ms');
+    });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('cafe-visible', entry.isIntersecting);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+      targets.forEach(function (el) { observer.observe(el); });
+    } else {
+      targets.forEach(function (el) { el.classList.add('cafe-visible'); });
+    }
+
+    var heroImage = document.getElementById('hero-img');
+    var ticking = false;
+    function updateMotionOnScroll() {
+      var doc = document.documentElement;
+      var maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, window.scrollY / maxScroll)) + ')';
+
+      if (heroImage && window.innerWidth > 900) {
+        var hero = document.getElementById('hero');
+        var rect = hero ? hero.getBoundingClientRect() : null;
+        if (rect && rect.bottom > 0 && rect.top < window.innerHeight) {
+          var offset = Math.max(-18, Math.min(18, rect.top * -0.035));
+          heroImage.style.setProperty('--cafe-parallax-y', offset.toFixed(1) + 'px');
+        }
+      }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { window.requestAnimationFrame(updateMotionOnScroll); ticking = true; }
+    }, { passive: true });
+    updateMotionOnScroll();
+
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.querySelectorAll('.btn').forEach(function (button) {
+        button.classList.add('is-magnetic');
+        button.addEventListener('pointermove', function (event) {
+          var rect = button.getBoundingClientRect();
+          var x = (event.clientX - rect.left - rect.width / 2) * 0.08;
+          var y = (event.clientY - rect.top - rect.height / 2) * 0.1;
+          button.style.transform = 'translate(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px)';
+        });
+        button.addEventListener('pointerleave', function () { button.style.transform = ''; });
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCafeMotion, { once: true });
+  } else {
+    initCafeMotion();
+  }
+
 })();

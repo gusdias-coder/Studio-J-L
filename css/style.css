@@ -316,3 +316,75 @@ footer .tag { color: var(--taupe); font-size: .88rem; margin-top: 8px; }
   .hero-visual .clip { clip-path: none !important; }
   .marquee-track { animation: none; }
 }
+
+
+/* ---------- TORRA NOBRE-inspired motion layer ----------------------------
+   Editorial reveals, reversible on-scroll entrance, subtle parallax and
+   restrained magnetic hover. Keeps the Studio J&L palette and typography.
+--------------------------------------------------------------------------- */
+:root {
+  --ease-cinema: cubic-bezier(.76, 0, .24, 1);
+  --motion-duration: 700ms;
+}
+.cafe-motion-target {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity var(--motion-duration) var(--ease-out),
+    transform var(--motion-duration) var(--ease-out);
+  will-change: opacity, transform;
+}
+.cafe-motion-target.cafe-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.cafe-motion-target[data-motion="image"] {
+  transform: translate3d(0, 0, 0) scale(1.035);
+  clip-path: inset(0 0 8% 0);
+  transition:
+    opacity 850ms var(--ease-cinema),
+    transform 1100ms var(--ease-cinema),
+    clip-path 1100ms var(--ease-cinema);
+}
+.cafe-motion-target[data-motion="image"].cafe-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+  clip-path: inset(0);
+}
+.svc-row .svc-left,
+.pillar,
+.res-card,
+.faq-wrap details {
+  transition:
+    opacity var(--motion-duration) var(--ease-out),
+    transform var(--motion-duration) var(--ease-out),
+    border-color 300ms ease;
+}
+.svc-row.cafe-motion-target { transition-delay: var(--motion-delay, 0ms); }
+.res-card.cafe-motion-target { transition-delay: var(--motion-delay, 0ms); }
+.pillar.cafe-motion-target { transition-delay: var(--motion-delay, 0ms); }
+.btn.is-magnetic { transition: transform 180ms ease, background 300ms ease, color 300ms ease; }
+#page-progress-cafe {
+  position: fixed;
+  z-index: 201;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--gold);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cafe-motion-target,
+  .cafe-motion-target.cafe-visible,
+  .cafe-motion-target[data-motion="image"],
+  .cafe-motion-target[data-motion="image"].cafe-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+  #page-progress-cafe { display: none; }
+}
